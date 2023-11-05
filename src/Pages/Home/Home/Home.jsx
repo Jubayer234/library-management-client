@@ -1,10 +1,14 @@
 import React from 'react'
 import Banner from '../Banner/Banner'
+import Footer from '../Footer/Footer'
 
 const Home = () => {
   return (
-    <div className='bg-[#e6ecf0]'>
+    <div>
+      <div className='bg-[#e6ecf0]'>
         <Banner></Banner>
+    </div>
+      <Footer></Footer>
     </div>
   )
 }
