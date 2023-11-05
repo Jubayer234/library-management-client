@@ -1,10 +1,10 @@
 import React from 'react'
-import Footer from '../Footer/Footer'
+import Banner from '../Banner/Banner'
 
 const Home = () => {
   return (
-    <div>
-        <Footer></Footer>
+    <div className='bg-[#e6ecf0]'>
+        <Banner></Banner>
     </div>
   )
 }
