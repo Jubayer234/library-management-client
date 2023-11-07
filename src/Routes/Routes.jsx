@@ -4,6 +4,8 @@ import Home from "../Pages/Home/Home/Home";
 import AddBook from "../Pages/AddBook/AddBook";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import Details from "../Details/Details";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -12,11 +14,12 @@ const router = createBrowserRouter([
       children: [
         {
             path: '/',
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: () => fetch('/card.json')
         },
         {
           path: '/addBook',
-          element: <AddBook></AddBook>
+          element: <PrivateRoute><AddBook></AddBook></PrivateRoute>
         },
         {
           path: '/register',
@@ -25,6 +28,11 @@ const router = createBrowserRouter([
         {
           path:'/login',
           element: <Login></Login>
+        },
+        {
+          path: '/details/:id',
+          element: <PrivateRoute><Details></Details></PrivateRoute>,
+          loader: () => fetch('/card.json')
         }
       ]
     },

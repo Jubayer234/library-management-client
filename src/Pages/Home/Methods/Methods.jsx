@@ -7,7 +7,7 @@ import value from '../../../assets/value 1.svg'
 
 const Methods = () => {
   return (
-    <div className='max-w-7xl mx-auto rounded-lg bg-[#5d666e] grid p-10 gap-10 text-white'>
+    <div className='max-w-7xl mx-auto relative -mb-10 rounded-lg bg-[#5d666e] grid p-10 gap-10 text-white'>
       
        <div className='grid md:grid-cols-2 lg:flex items-center gap-10 lg:gap-20'>
        <div className='flex gap-6'>
