@@ -1,12 +1,32 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import svg from '../../assets/login 1.png'
+import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-
-
-        const handleLogIn = event => {
-            event.preventDefault();
+    const {signIn}= useContext(AuthContext);
+    const {logIn} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+   
+    const handleGoogleSignIn =() => {
+        signIn().then(result => {
+            console.log(result.user)
+            Swal.fire("logged in");
+            navigate(location?.state ? location.state : '/' )
+        })
+    }
+    const handleLogIn =(e) => {
+        e.preventDefault ()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        logIn(email,password)
+        .then(result => {
+            console.log(result.user);
+            Swal.fire("logged in");
+            navigate(location?.state ? location.state : '/' )
+        } )
         }
 
     return (
@@ -38,7 +58,7 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn font-bold text-white bg-[#b08cf4]">Login</button>
                             </div>
-                            <button className='btn bg-[#fc77ae] text-white'>sign In with google</button>
+                            <button onClick={handleGoogleSignIn}  className='btn bg-[#fc77ae] text-white'>sign In with google</button>
                             <p className='text-lg mt-5 text-center '>Don't have an account? <Link className='text-blue-600 font-serif font-semibold' to="/register" >Register</Link></p>
                             
                         </form>
