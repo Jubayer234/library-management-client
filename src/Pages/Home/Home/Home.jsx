@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer'
 import Methods from '../Methods/Methods'
 import BookCards from '../BookCards/BookCards'
 import { useLoaderData } from 'react-router-dom'
+import Location from '../Location/Location'
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
         <Banner></Banner>
     </div>
       <BookCards cards={cards}></BookCards>
+      <Location></Location>
       <Methods></Methods>
       <Footer></Footer>
     </div>
