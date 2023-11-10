@@ -89,7 +89,7 @@ const TheBooks = ({ card }) => {
                             <input type="radio" name="rating-9" className="mask mask-star-2" />
                             <input type="radio" name="rating-9" className="mask mask-star-2" />
                         </div>
-                        <Link to={`/productDetail4/${id}`}><button className='btn mt-8 bg-[#93A2B5] text-white'>
+                        <Link to={`/bookDetail4/${id}`}><button className='btn mt-8 bg-[#93A2B5] text-white'>
                             Book Details
                         </button></Link>
                     </div>

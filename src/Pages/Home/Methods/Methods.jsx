@@ -27,7 +27,7 @@ const Methods = () => {
         <div className='flex gap-6'>
         <img src={payment} alt="" />
             <div>
-                <p className='font-semibold'>Free Delivery</p>
+                <p className='font-semibold'>Secure Payment</p>
                 <p className='text-sm  text-[#FFFFFFCC]'>100% secure payment</p>
             </div>
         </div>
