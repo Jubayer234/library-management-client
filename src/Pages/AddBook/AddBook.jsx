@@ -1,6 +1,17 @@
 import React from 'react'
 
 const AddBook = () => {
+  const handleAddBook = event => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value
+    const category = form.category.value
+    const authorName = form.authorName.value
+    const rating = form.rating.value
+    const image = form.image.value
+    const quantity = form.quantity.value
+
+  }
   return (
     <div className=' bg-[#e6ecf0] min-h-screen lg:pt-10'>
 
@@ -9,7 +20,7 @@ const AddBook = () => {
         <div className="text-center space-y-4">
         </div>
         <div className="card flex-shrink-0 w-full">
-          <form className="card-body grid grid-cols-1 md:grid-cols-2">
+          <form onSubmit={handleAddBook} className="card-body grid grid-cols-1 md:grid-cols-2">
             <div className="form-control ">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -20,13 +31,13 @@ const AddBook = () => {
               <label className="label">
                 <span className="label-text">Author Name</span>
               </label>
-              <input type="text" name='brand' placeholder="Name of the author" className="input input-bordered" required />
+              <input type="text" name='authorName' placeholder="Name of the author" className="input input-bordered" required />
             </div>
             <div className="form-control ">
               <label className="label">
                 <span className="label-text">Category</span>
               </label>
-              <input type="text" name='type' placeholder="Book category" className="input input-bordered" required />
+              <input type="text" name='category' placeholder="Book category" className="input input-bordered" required />
             </div>
             
             <div className="form-control ">

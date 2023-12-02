@@ -36,13 +36,14 @@ const Register = () => {
                 .then(result => {
                     console.log(result.user)
                     updateUserProfile(displayName, photo)
-                        .then(() => {
-                            const userInfo = {
-                                name: displayName,
-                                email: email
-                            }
-                             navigate(location?.state ? location.state : '/')
-                        })
+                    .then(result => {
+                        Swal.fire('successfully registered!')
+                        console.log(result.user)
+                        navigate(location?.state ? location.state : '/' )
+                    })
+                    .catch(error => {
+                        console.error(error)
+                    })
                 })
         }
         }
