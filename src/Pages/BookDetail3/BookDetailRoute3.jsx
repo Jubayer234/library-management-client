@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const BookDetailRoute3 = ({card}) => {
     const { id, BookImg3, category, BookName3,authorName3 } = card || {};
@@ -21,7 +22,8 @@ const BookDetailRoute3 = ({card}) => {
                             <input type="radio" name="rating-6" className="mask mask-star-2" />
                         </div>
                     <div className="card-actions">
-                        <button className="btn bg-[#93A2B5] text-white">Read</button>
+                        <Link to={'/read'}>
+                        <button className="btn bg-[#93A2B5] text-white">Read</button></Link>
                         <button className="btn bg-[#93A2B5] text-white">Borrow</button>
                     </div>
                 </div>

@@ -2,15 +2,9 @@ import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import NavLogo from '../../../assets/book-stack 1.png'
 import { AuthContext } from '../../../Provider/AuthProvider';
+import UserProfile from '../../UserProfile/UserProfile';
 
 const Navbar = () => {
-
-    const { user, logOut } = useContext(AuthContext);
-    const handleLogOut = () => {
-        logOut()
-            .then()
-            .catch()
-    }
 
     const navLinks = <div className='lg:flex gap-10 text-lg text-black font-semibold'>
         <p>
@@ -62,15 +56,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div>
-                {
-                        user ?
-                            <button onClick={handleLogOut} className='btn  ml-3 bg-[#5272a5] font-semibold text-white'>LogOut </button>
-                            :
-                            <Link to={'/login'}>
-                                <button className='btn ml-3 border bg-[#30373D] font-semibold text-white'>Login</button>
-                            </Link>
-
-                    }
+                <UserProfile></UserProfile>
                 </div>
             </div>
         </div>

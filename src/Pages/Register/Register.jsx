@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser,updateUserProfile} = useContext(AuthContext);
     const location = useLocation ();
     const navigate = useNavigate();
 
@@ -31,16 +31,19 @@ const Register = () => {
         }else if(!/(?=.*[@$!%*?&])/.test(password)){
             toast.error("Password doesn't have a special character")
             return;
-        }else{
-            createUser(email,password,displayName,photo)
-            .then(result => {
-                Swal.fire('successfully registered!')
-                console.log(result.user)
-                navigate(location?.state ? location.state : '/' )
-            })
-            .catch(error => {
-                console.error(error)
-            })
+        }else {
+            createUser(email, password)
+                .then(result => {
+                    console.log(result.user)
+                    updateUserProfile(displayName, photo)
+                        .then(() => {
+                            const userInfo = {
+                                name: displayName,
+                                email: email
+                            }
+                             navigate(location?.state ? location.state : '/')
+                        })
+                })
         }
         }
 
