@@ -10,7 +10,21 @@ const AddBook = () => {
     const rating = form.rating.value
     const image = form.image.value
     const quantity = form.quantity.value
+    
+    const newBooks = {name,category,authorName,rating,image,quantity}
+    console.log(newBooks);
 
+    fetch('http://localhost:5000/addedBooks',{
+      method: 'POST',
+      headers : {
+        'content-type' : 'application/json'
+      },
+      body: JSON.stringify(newBooks)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })
   }
   return (
     <div className=' bg-[#e6ecf0] min-h-screen lg:pt-10'>
