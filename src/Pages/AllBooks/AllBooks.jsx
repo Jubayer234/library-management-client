@@ -5,7 +5,7 @@ import SeeBooks from './SeeBooks';
 
 const AllBooks = () => {
     useEffect(() => {
-      fetch('http://localhost:5000/bookAdd')
+      fetch('https://library-management-server-rho.vercel.app/bookAdd')
       .then(res => res.json())
       .then(data => {
         setData(data);

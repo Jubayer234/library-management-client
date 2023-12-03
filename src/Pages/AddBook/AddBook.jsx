@@ -14,7 +14,7 @@ const AddBook = () => {
     
     const newBooks = {name,category,authorName,rating,image,quantity}
     console.log(newBooks);
-    fetch('http://localhost:5000/bookAdd' ,{
+    fetch('https://library-management-server-rho.vercel.app/bookAdd' ,{
       method: 'POST',
       headers: {
           'content-type' : 'application/json'
