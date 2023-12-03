@@ -17,7 +17,7 @@ const Navbar = () => {
         </p>
         <p>
             <NavLink className={({ isActive }) =>
-                isActive ? " underline text-[#8E6841]" : ""} to="/myCart">All Books</NavLink>
+                isActive ? " underline text-[#8E6841]" : ""} to="/allBooks">All Books</NavLink>
         </p>
         <p>
             <NavLink className={({ isActive }) =>

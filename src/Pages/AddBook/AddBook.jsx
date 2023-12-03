@@ -1,4 +1,5 @@
 import React from 'react'
+import Swal from 'sweetalert2';
 
 const AddBook = () => {
   const handleAddBook = event => {
@@ -13,17 +14,19 @@ const AddBook = () => {
     
     const newBooks = {name,category,authorName,rating,image,quantity}
     console.log(newBooks);
-
-    fetch('http://localhost:5000/addedBooks',{
+    fetch('http://localhost:5000/bookAdd' ,{
       method: 'POST',
-      headers : {
-        'content-type' : 'application/json'
+      headers: {
+          'content-type' : 'application/json'
       },
       body: JSON.stringify(newBooks)
     })
     .then(res => res.json())
     .then(data => {
       console.log(data);
+      if(data.insertedId){
+        Swal.fire("Book Added");
+      }
     })
   }
   return (
