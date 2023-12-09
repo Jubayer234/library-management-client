@@ -8,7 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 ## Website Name And Live Link:
      .Name: Library Management
-     .Link: [https://brand-shop-assignment-10.web.app](https://library-management-f4870.web.app/)https://library-management-f4870.web.app
+     .Link: https://library-management-f4870.web.app
 ## Features Of my website
 
     .Looks Beautiful and unique
